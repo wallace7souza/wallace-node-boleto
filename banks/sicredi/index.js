@@ -5,9 +5,7 @@ var helper = require('./helper')
 
 const fs = require('fs');
 var pathResolve = require('path').resolve;
-let pathLogo = pathResolve('./assets/sicredi-logo-boleto.png')
-let pathBlackCode = pathResolve('./assets/b.png')
-let pathWhiteCode = pathResolve('./assets/white.png')
+let pathLogo = pathResolve(__dirname + '/sicredi-logo-boleto.png')
 
 const contents = fs.readFileSync(pathLogo, {encoding: 'base64'});
 
