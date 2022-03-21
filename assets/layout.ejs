@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head>
   <title>Visualização de boleto</title>
-  <meta name="robots" content="noindex"> 
+  <meta name="robots" content="noindex">
   <meta name="format-detection" content="telephone=no"/>
+  <meta charset="utf-8">
   <style media="screen, print" type="text/css">
   body
   {
@@ -18,33 +19,37 @@
 
   img{border:0}
 
-  .cp 
+    .hide{
+        display:none
+
+    }
+  .cp
   {
-	  font: bold 10px arial; 
+	  font: bold 10px arial;
 	  color: black
   }
-  .ti 
+  .ti
   {
 	  font: 9px arial, helvetica, sans-serif
   }
-  .ld 
+  .ld
   {
-	  font: bold 15px arial; 
+	  font: bold 15px arial;
 	  color: #000000
   }
-  .ct 
+  .ct
   {
-	  font: 9px "arial narrow"; 
+	  font: 9px "arial narrow";
 	  color: #000033
   }
-  .cn 
+  .cn
   {
-	  font: 9px arial; 
+	  font: 9px arial;
 	  color: black
   }
-  .bc 
+  .bc
   {
-	  font: bold 22px arial; 
+	  font: bold 22px arial;
 	  color: #000000
   }
 
@@ -150,7 +155,7 @@
 </head>
 <body>
 	<div>
-	<table class="w666">
+	<table class="w666 <%= boleto['no_print_instructions'] ? 'hide' : '' %>">
         <tr class="cpN">
             <td class="At Ac">Instruções de Impressão</td>
         </tr>
@@ -313,7 +318,11 @@
         <tr class="rc6">
             <td class="w478">
                 <div class="ctN pL10">Instruções (Texto de responsabilidade do beneficiário)</div>
-				<div class="cpN pL10"><%- boleto['instrucoes'] || '' %></div>
+				<div class="cpN pL10">
+				<% for(var i = 0; i < boleto['instrucoesSicredi'].length; i++) { %>
+				    <%= boleto['instrucoesSicredi'][i] %> <br>
+				<% } %>
+				</div>
             </td>
             <td class="w186">
                 <div class="t">(-) Desconto / Abatimentos</div>

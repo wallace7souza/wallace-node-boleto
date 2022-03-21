@@ -8,7 +8,7 @@ lib-cov
 *.gz
 .DS_Store
 
-pids
+pidsw
 logs
 results
 
@@ -18,3 +18,6 @@ node_modules
 .nyc_output
 coverage
 .scannerwork/
+
+sandbox.js
+output
