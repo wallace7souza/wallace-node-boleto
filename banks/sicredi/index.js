@@ -20,6 +20,11 @@ exports.dvBarra = function (barra) {
 }
 
 exports.barcodeData = function (boleto) {
+
+  if(boleto.codigoBarra){
+    return boleto.codigoBarra;
+  }
+
   var codigoBanco = this.options.codigo
   var numMoeda = '9'
   var fixo = '9' // Numero fixo para a posição 05-05
