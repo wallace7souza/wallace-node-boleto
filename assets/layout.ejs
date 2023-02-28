@@ -246,7 +246,7 @@
         <tr class="cpN h12">
             <td class="pL6"><%- boleto['instrucoes'] || '' %>
                 <% if (boleto['qrCode']) { %>
-                    <img src="data:image/png;base64,<%= boleto['qrCode'] %>" alt="">
+                    <img style="width: 60px;height: 60px;" src="data:image/png;base64,<%= boleto['qrCode'] %>" alt="">
                 <% } %>
                 
             </td>
