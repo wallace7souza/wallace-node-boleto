@@ -244,13 +244,14 @@
             <td class="w180 Ar">Autenticação mecânica</td>
         </tr>
         <tr class="cpN h12">
-            <td class="pL6"><%- boleto['instrucoes'] || '' %>
-                <% if (boleto['qrCode']) { %>
-                    <img style="width: 70px;height: 70px;" src="data:image/png;base64,<%= boleto['qrCode'] %>" alt="">
-                <% } %>
-                
+            <td class="pL6">
+                <span style="float: left"><%- boleto['instrucoes'] || '' %></span>
             </td>
-            <td class="pL6 Ar"></td>
+            <td class="pL6 Ar">
+                <% if (boleto['qrCode']) { %>
+                    <img style="position: relative;top: 5px;width: 100px;height: 100px;" src="data:image/png;base64,<%= boleto['qrCode'] %>" alt="">
+                <% } %>
+            </td>
         </tr>
     </table><table class="ctN w666">
         <tr class="h13"><td /></tr>
